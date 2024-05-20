@@ -4,7 +4,7 @@ use App\Enums\ResponseCode;
 
 use Illuminate\Http\JsonResponse;
 
-function failedResponse($message, $code, $status = ResponseCode::OK): JsonResponse
+function failedResponse($code,$message = 'Failed', $status = ResponseCode::OK): JsonResponse
 {
     return response()->json([
         'success' => false,

@@ -84,7 +84,7 @@ class ProductController extends Controller
         if ($data) {
             return successResponse(new ProductResource($data));
         }
-        return failedResponse(__("common.notFound"), 404);
+        return failedResponse( 404);
     }
 
     /**
@@ -102,8 +102,8 @@ class ProductController extends Controller
     {
         $data = ProductRepository::Remove($id);
         if ($data) {
-            return successResponse(new ProductResource($data));
+            return successResponse([]);
         }
-        return failedResponse(__("common.notFound"), 404);
+        return failedResponse( 404);
     }
 }

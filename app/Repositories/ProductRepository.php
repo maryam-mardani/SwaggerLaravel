@@ -40,7 +40,7 @@ class ProductRepository implements RepositoryInterface
         }
         $record->save();
 
-        return $record->id;
+        return $record;
     }
 
     public static function FindByField($field, $value)

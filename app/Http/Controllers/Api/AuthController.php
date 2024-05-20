@@ -39,10 +39,10 @@ class AuthController extends Controller
     {
         $user = UserRepository::FindByField("username", $request->username);
         if (!$user) {
-            return failedResponse(__("common.notFound"), ResponseCode::NOT_FOUND_DATA);
+            return failedResponse( ResponseCode::NOT_FOUND_DATA);
         }
         if (!Hash::check($request->password, $user->password)) {
-            return failedResponse(__("common.notFound"), ResponseCode::NOT_FOUND_DATA);
+            return failedResponse( ResponseCode::NOT_FOUND_DATA);
         }
         $token = $user->createToken('authTokenUser')->plainTextToken;
         $user['token'] = $token;

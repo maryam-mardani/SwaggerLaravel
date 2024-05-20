@@ -27,7 +27,7 @@ class UpdateProductRequest extends FormRequest
         $id = $this->route('product');
         return [
             "title"=>"string|min:3|unique:products,title,".$id.",id",
-            "brand"=>"nullable",
+            "brand"=>"string",
         ];
     }
 }
